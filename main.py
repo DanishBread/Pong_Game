@@ -9,7 +9,7 @@ screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
 screen.title("Pong")
-screen.tracer(1, 0.1)
+screen.tracer(0.1, 0)
 
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
@@ -23,7 +23,7 @@ screen.onkey(l_paddle.go_down, "a")
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.10)
+    time.sleep(ball.move_speed)
     screen.update()
     ball.move()
 
